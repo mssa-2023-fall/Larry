@@ -7,7 +7,7 @@ namespace Debugger
     {
         static void Main(string[] args)
         {
-            var files;
+            var files = 0;
             var directory = Directory.CreateDirectory(@"C:\Users\lol4l\source\repos\class-projects\Larry\My Code For Each Module\Debugger\");
             for (int i = 0; i == 10; i++)
             {
