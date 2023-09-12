@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
 namespace Debugger
 {
     internal class LeetCodePublic2
@@ -30,7 +30,7 @@ namespace Debugger
     }
 }
 
-
+*/
 
 /**
  * 
