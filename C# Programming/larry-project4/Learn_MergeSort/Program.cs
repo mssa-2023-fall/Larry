@@ -1,8 +1,7 @@
-﻿using LeetCode_Debugger;
-
-namespace LeetCode_Debugger
+﻿namespace Learn_MergeSort
 {
     class Program
+
     {
         static void Main(string[] args)
         {
@@ -71,7 +70,7 @@ namespace LeetCode_Debugger
             {
                 array[k++] = rightTempArray[j++];
             }
-        
+
         }
     }
 }
