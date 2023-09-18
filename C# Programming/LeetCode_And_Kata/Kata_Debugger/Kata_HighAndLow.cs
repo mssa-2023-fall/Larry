@@ -4,7 +4,7 @@ using System.Diagnostics.Metrics;
 using System.Globalization;
 using System.Net;
 using Microsoft.VisualBasic;
-
+/*
 namespace Kata2
 {
 public static class Kata
@@ -32,7 +32,7 @@ public static class Kata
 
 
 }
-
+*/
 
 
 
@@ -58,9 +58,9 @@ var testConversion = Convert.ToInt32(test3);
 .WriteLine(testConversion);
 
 }
-*/
-}
 
+}
+*/
 
 
 

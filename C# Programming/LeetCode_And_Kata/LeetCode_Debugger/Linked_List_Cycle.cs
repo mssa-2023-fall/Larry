@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCode_Debugger
 {
-    public class LinkedListCycle
+    public class Linked_List_Cycle
     {
             public bool HasCycle(/*ListNode head*/)
             {

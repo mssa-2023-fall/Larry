@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System;
-
+/*
 namespace Kata1
 {
     abstract class Kata
@@ -28,7 +28,7 @@ namespace Kata1
 
 
 
-
+*/
 
 
 

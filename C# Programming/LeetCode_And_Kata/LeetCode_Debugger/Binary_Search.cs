@@ -6,10 +6,10 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
 namespace LeetCode_Debugger
 {
-    public class BinarySearch
+    public class Binary_Search
     {
         public int Search(int[] nums, int target)
         {
@@ -32,7 +32,7 @@ namespace LeetCode_Debugger
         }
     }
 }
-
+*/
 //what if the target is not in the array?
 //int[] nums = {1,2,3,4}  & int target = 5
 // I used a foreach loop from the beginning for this issue.
