@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Net;
 using Microsoft.VisualBasic;
 /*
-namespace Kata2
+namespace Kata_Debugger
 {
 public static class Kata
 {//FAILED

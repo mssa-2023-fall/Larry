@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System;
 /*
-namespace Kata1
+namespace Kata_Debugger
 {
     abstract class Kata
     {
