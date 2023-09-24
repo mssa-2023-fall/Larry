@@ -3,7 +3,7 @@ using System.Text;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
-
+/*
 namespace LeetCode_Debugger
 {
     public class Medium_Anagrams
@@ -32,7 +32,7 @@ namespace LeetCode_Debugger
     }
 }
 
-
+*/
 
 
 
