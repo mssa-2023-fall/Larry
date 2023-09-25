@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+SQL/SQLQuery/SQL_Connection.cs
+SQL/SQLQuery/SQL_Connection_String/SQL_Connection.cs
+SQL/SQLQuery/SQL_Connection_String/SQL_Connection_String.sln
+SQL/SQLQuery/SQL_Connection_String/SQL_Connection_String.csproj
+SQL/SQLQuery/SQL_Connection_String/Create_Employees_Table.cs
+SQL/MSSA_SQL_Class/MSSA_SQL_Class.sqlproj
+SQL/.vscode/settings.json

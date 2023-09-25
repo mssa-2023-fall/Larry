@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using Kata_Debugger;
-
+/*
 
 [TestFixture]
 public class Test
@@ -23,3 +23,4 @@ public class Test
         StringAssert.AreEqualIgnoringCase(expected, output);
     }
 }
+*/

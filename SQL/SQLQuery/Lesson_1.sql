@@ -1,2 +1,2 @@
-select top 100 *
+select *
 from sales.Customers
