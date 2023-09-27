@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Runtime.InteropServices.Marshalling;
-
+/*
 namespace Queries
 {
     class Program
@@ -16,4 +16,4 @@ namespace Queries
         }
 
     }
-}
+}*/
