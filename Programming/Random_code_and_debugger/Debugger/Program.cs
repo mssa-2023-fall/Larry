@@ -1,110 +1,63 @@
 ﻿using System;
-using System.IO;
-using System.Numerics;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
+using System.Net;
 
-namespace Debugger
-{   /*
-    public class Program
+class Program
+{
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-            var someNode = new BinaryTreeClass();
-            
-        }
-    }*/
-    class Node
-    {
-        public int desiredValue { get; set; }
-        public Node leftChild { get; set; }
-        public Node rightChild { get; set; }
-        
-        public Node(int newValue)
-        {
-            desiredValue = newValue;
+        string binarySubnetMask = "11111111.11111111.11111110.00000000";
 
-        }
-    }
-    // Define a BinaryTree Class:
-    // Implement a BinaryTree class with a root node property and methods for inserting nodes and printing the tree.
-    
-    public class BinaryTreeClass
-    {
-         Node startNode { get; set; }
+        // Split the binary subnet mask into octets
+        string[] octets = binarySubnetMask.Split('.');
 
-        public BinaryTreeClass()
+        if (octets.Length != 4)
         {
-            startNode = null;
+            Console.WriteLine("Invalid binary subnet mask format.");
+            return;
         }
 
-
-
-
-        public void Insert(int storeValue)
+        try
         {
-            Node begin = new Node(storeValue);
-
-            if (startNode == null) { startNode = begin; return; }
-        }
-
-
-
-
-        public void Solve()
-        {
-            Queue<Node> queue = new Queue<Node>();
-            queue.Enqueue(startNode);
-
-            bool[] visited = new bool[100];
-            
-            while( queue.Count > 0 )
+            // Convert each binary octet to decimal
+            byte[] subnetMaskBytes = new byte[4];
+            for (int i = 0; i < 4; i++)
             {
-                start
+                subnetMaskBytes[i] = Convert.ToByte(octets[i], 2);
             }
+
+            // Create an IPAddress object from the subnet mask bytes
+            IPAddress subnetMask = new IPAddress(subnetMaskBytes);
+
+            // Define the IP address for the network ID
+            IPAddress ipAddress = IPAddress.Parse("123.123.122.0");
+
+            // Calculate the network ID
+            byte[] ipAddressBytes = ipAddress.GetAddressBytes();
+            byte[] networkIdBytes = new byte[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                networkIdBytes[i] = (byte)(ipAddressBytes[i] & subnetMaskBytes[i]);
+            }
+
+            IPAddress networkId = new IPAddress(networkIdBytes);
+
+            // Calculate the network range
+            byte[] broadcastAddressBytes = new byte[4];
+            for (int i = 0; i < 4; i++)
+            {
+                broadcastAddressBytes[i] = (byte)(networkIdBytes[i] | (byte)~subnetMaskBytes[i]);
+            }
+            IPAddress broadcastAddress = new IPAddress(broadcastAddressBytes);
+
+            Console.WriteLine("Binary Subnet Mask: " + binarySubnetMask);
+            Console.WriteLine("Network ID: " + networkId.ToString());
+            Console.WriteLine("Network Range: " + networkId.ToString() + " - " + broadcastAddress.ToString());
+            Console.WriteLine("Subnetmask is: " + subnetMask.ToString());
         }
-        
-
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid binary subnet mask format.");
+        }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. 
-///The order of the elements may be changed. 
-///Then return the number of elements in nums which are not equal to val.
-///Consider the number of elements in nums which are not equal to val be k,
-///to get accepted, you need to do the following things:
-///Change the array nums such that the first k elements of nums contain the elements which are not equal to val. 
-///The remaining elements of nums are not important as well as the size of nums.
-///Return k.
