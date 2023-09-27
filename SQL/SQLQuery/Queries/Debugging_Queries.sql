@@ -34,3 +34,5 @@ insert into lsn.Category(CategoryName,CategoryDescription)
 values('Hardware','Things you put inside a computer box');
 insert into lsn.Category(CategoryName,CategoryDescription)
 values('Software','Things you install');*/
+
+
