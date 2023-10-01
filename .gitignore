@@ -404,3 +404,5 @@ SQL/SQLQuery/SQL_Connection_String/Create_Employees_Table.cs
 SQL/MSSA_SQL_Class/MSSA_SQL_Class.sqlproj
 SQL/.vscode/settings.json
 SQL/SQLQuery/SQL_Connection_String/CreateTable_LINQ.cs
+SQL/SQLQuery/MSSQL_LocalDB_ConnectionString/Connection_String.cs
+SQL/SQLQuery/Adventure_Works_Queries/AW_Connection_String.cs
