@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Cracking_The_Coding_Interview
 {
-    public class Program
+    class Simple_Hashtable
     {
-        static void Main(string[] args)
+        public void Hashtable()
         {
             Hashtable hashtable = new Hashtable(10);
             hashtable.Add(100, "Spongebob");
