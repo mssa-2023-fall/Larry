@@ -1,0 +1,20 @@
+.grid-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+    gap: 10px; /* Space between grid items */
+    max-width: 600px; /* Optional: set a max-width */
+    margin: 20px auto; /* Center the grid (if max-width is set) */
+}
+
+.grid-item {
+    width: 40px; /* Set the width */
+    height: 40px; /* Set the height */
+    position: relative;
+}
+
+.grid-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    display: block;
+}

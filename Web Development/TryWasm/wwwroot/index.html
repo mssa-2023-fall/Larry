@@ -10,6 +10,7 @@
     <link href="css/app.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="TryWasm.styles.css" rel="stylesheet" />
+    <link href="css/WeddingPictureUploads.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,6 +27,36 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+    <script>
+        window.smoothScrollToElement = (elementId) => {
+            var element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+    </script>
+    <script src="javascript/minigridscript.js"></script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            let inputs = document.querySelectorAll('.image-input');
+
+            inputs.forEach(input => {
+                input.addEventListener('change', function (e) {
+                    if (input.files && input.files[0]) {
+                        let reader = new FileReader();
+
+                        reader.onload = function (event) {
+                            let label = document.querySelector(`label[for="${input.id}"]`);
+                            label.style.backgroundImage = `url(${event.target.result})`;
+                            label.style.backgroundSize = 'cover';
+                            label.style.backgroundPosition = 'center center';
+                        }
+
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                });
+            });
+        });
+</script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 
