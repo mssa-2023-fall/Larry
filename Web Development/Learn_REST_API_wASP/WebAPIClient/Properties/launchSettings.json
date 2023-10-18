@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WebAPIClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "API_NINJAS_KEY": "ArbxmbLV+xP4PVvOCeaf/w==eLW4groevMLrF7WT"
+      }
+    }
+  }
+}

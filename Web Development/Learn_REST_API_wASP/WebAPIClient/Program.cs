@@ -23,33 +23,46 @@ namespace WebAPIClient
 
             await ProcessRepositoriesASync(client);
 
-           /* #region  Deserializing {"name:"} to {Name:}
-            static async Task ProcessRepositoriesASync(HttpClient client)
-            {
+            /* #region  Deserializing {"name:"} to {Name:}
+             static async Task ProcessRepositoriesASync(HttpClient client)
+             {
 
 
-                await using Stream stream =
-         await client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
+                 await using Stream stream =
+          await client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
 
-                //deserialize repos to c#
-                var repositories =
-                await JsonSerializer.DeserializeAsync<List<Repository>>(stream);
+                 //deserialize repos to c#
+                 var repositories =
+                 await JsonSerializer.DeserializeAsync<List<Repository>>(stream);
 
 
-                //output a List of type Repository
-                Console.Write(repositories);
-                foreach (var repo in repositories ?? Enumerable.Empty<Repository>())
-                    Console.Write(repo.Name);
-            }
-            #endregion
-           */
+                 //output a List of type Repository
+                 Console.Write(repositories);
+                 foreach (var repo in repositories ?? Enumerable.Empty<Repository>())
+                     Console.Write(repo.Name);
+             }
+             #endregion
+            */
             static async Task<List<Repository>> ProcessRepositoriesASync(HttpClient client)
             {
                 await using Stream stream =
                 await client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
                 var repositories =
                 await JsonSerializer.DeserializeAsync<List<Repository>>(stream);
+                foreach (var repo in repositories)
+                {
+                    Console.WriteLine($"Name: {repo.Name}");
+                    Console.WriteLine($"Homepage: {repo.Homepage}");
+                    Console.WriteLine($"GitHub: {repo.GitHubHomeUrl}");
+                    Console.WriteLine($"Description: {repo.Description}");
+                    Console.WriteLine($"Watchers: {repo.Watchers:#,0}");
+                    Console.WriteLine($"Time: {repo.LastPush}");
+                    Console.WriteLine();
+                } 
+
+
                 return repositories ?? new();
+
             }
 
         }
