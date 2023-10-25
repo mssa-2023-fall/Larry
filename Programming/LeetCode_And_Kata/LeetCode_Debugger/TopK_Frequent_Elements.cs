@@ -1,57 +1,8 @@
 using System.Collections.Generic;
 using System;
-using System.Dynamic;
-using System.Net.Http.Headers;
-using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Globalization;
-using System.Security.Cryptography.X509Certificates;
+
 /*
-public class Solution
-{
-
-    static void Main(string[] args)
-    {
-        int[] nums = { 3, 0, 1, 0 };
-        int k = 2;
-        int[] nums2 = new int[nums.Length];
-        
-
-
-        //var kFrequent = new Solution();
-        //kFrequent.TopKFrequent(nums, k);
-        Array.Sort(nums);
-        Array.Reverse(nums);
-        
-        foreach(var n in nums)
-        {
-            Console.WriteLine(n);
-
-        }
-
-    }
-
-   /* public int[] TopKFrequent(int[] nums, int k)
-    {
-
-
-        int[] results = new int[nums.Length];
-        Array.Sort(results);
-        for (int i = 0; i < nums.Length; i++)
-        {
-        Console.WriteLine(results[i]);
-            
-            
-        }
-        return new int[results.Length];
-    }
-}    */
-
-
-
-/* Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
-
- 
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
 Example 1:
 
@@ -61,37 +12,43 @@ Example 2:
 
 Input: nums = [1], k = 1
 Output: [1]
- */
+*/
 
-//Basically, if k = 3, give me the top 3 items that are most frequent.
-
-
-
-
-
-
-/*One way of solving. I only get 7 of 21 testcases.
-
-    public static int[] TopKFrequent(int[] nums, int k)
+namespace LeetCode_Debugger
+{
+    public class TopKFrequentElements
     {
-
-
-        int[] results = new int[nums.Length];
-        for (int i = 0; i < nums.Length; i++)
+        public int[] TopKFrequent(int[] nums, int k)
         {
-            for (int j = 1; j < nums.Length; i++)
-            {
-                if (i == j)
-                {
-                    HashSet<int> ints = new HashSet<int>();
-                    ints.Add(i);
-                    results = ints.ToArray();
-                    i++;
 
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+
+            foreach (int n in nums)
+            {
+                if (dict.ContainsKey(n))
+                {
+                    dict[n]++;
                 }
-                break;
+                else
+                {
+                    dict[n] = 1;
+                }
             }
+            return dict.OrderByDescending(x => x.Value).Take(k).Select(x => x.Key).ToArray();
         }
-        return results;
+
     }
-}*/
+
+    public static class TopKFrequentElementz
+    {
+        public static void TopKFrequentOutput()
+        {
+            int[] nums = { 1, 1, 1, 2, 2, 3 };
+            int k = 2; //two of the most frequent elements
+
+            var instantiateThis = new TopKFrequentElements();
+            Console.WriteLine(instantiateThis.TopKFrequent(nums, k));
+        }
+    }
+
+}

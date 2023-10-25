@@ -1,11 +1,11 @@
-using System.Collections.Generic;
-using System.Text;
-using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 /*
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
@@ -28,76 +28,65 @@ Output: [["a"]]
 */
 namespace LeetCode_Debugger
 {
-    public class Medium_Anagrams
+    public class Group_Anagrams
     {
-        string[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
-        public IList<IList<string>> GroupAnagrams(string[] strs)
+
+        #region The Actual Method
+        public class Solution_GAnagram
         {
-
-            IList<IList<string>> listOfListsOfStrings = new List<IList<string>>();
-            for (int i = 0; i < strs.Length; i++)
+            public IList<IList<string>> GroupAnagrams(string[] strs)
             {
-                listOfListsOfStrings.Add(new List<string> { strs[i] });
-            }
-            return new List<IList<string>>(listOfListsOfStrings);
+                Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
 
-
-
-        }
-        static void Main(string[] args)
-        {
-            string[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
-
-            IList<IList<string>> listOfListsOfStrings = new List<IList<string>>();
-            IList<IList<string[]>> resultOfListsOfStrings = new List<IList<string[]>>();
-            listOfListsOfStrings.Add(new List<string>(strs));
-            List<char[]> chars = new List<char[]>();
-
-            foreach(var a in strs)
-            {
-                var strsToCharArray = a.ToCharArray();
-                Array.Sort(strsToCharArray);
-                chars.Add(strsToCharArray);
-            }
-            foreach(var c in chars)
-            {
-                string[] backToString = new string[strs.Length];
-                string backToStringArray = new string(c);
-                Array.Fill(backToString,backToStringArray);
-                foreach(var b in backToString)
+                for (int i = 0; i < strs.Length; i++)
                 {
-                   
+                    char[] chars = strs[i].ToCharArray();
+                    Array.Sort(chars);
+                    string sortedStrings = new string(chars);
+
+                    if (!dict.ContainsKey(sortedStrings))
+                    {
+                        dict.Add(sortedStrings, new List<string> { strs[i] });
+                    }
+                    else
+                    {
+                        dict[sortedStrings].Add(strs[i]);
+                    }
                 }
-                
-            }
 
-        }
-    }
-
-
-
-    public class UnderstandingAListOfLists
-    {
-        public void UnderstandingLists()
-        {
-            IList<IList<string>> listOfLists = new List<IList<string>>
-            {
-                new List<string> {"apple", "banana"},
-                new List<string> {"cat", "dog"},
-                new List<string> {"elephant", "fox"}
-            };
-            foreach (IList<string> strings in listOfLists)
-            {
-                foreach (string item in strings)
-                {
-                    Console.WriteLine(item);
-                }
-                Console.WriteLine();
+                return new List<IList<string>>(dict.Values.ToList());
             }
         }
 
     }
 }
-//I want to do the work separately.
-//Check Length
-//Sort and compare
+#endregion
+
+
+
+public static class Group_Anagram
+{
+    public static void GroupAnagramOutput()
+    {
+        string[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+        for (int i = 0; i < strs.Length; i++)
+        {
+            char[] chars = strs[i].ToCharArray();
+            Array.Sort(chars);
+            string sortedStrings = new string(chars);
+
+            sortedStrings.ToList();
+            //if dict does not contain the key called (sortedStrings) -> dict @ the key [sortedStrings]  = create new value of [List<string>]
+            if (!dict.ContainsKey(sortedStrings))
+            {
+                dict[sortedStrings] = new List<string>();
+            }
+
+            dict[sortedStrings].Add(strs[i]);
+        }
+        Console.Write(dict.Values.ToList<IList<string>>());
+
+
+    }
+}
