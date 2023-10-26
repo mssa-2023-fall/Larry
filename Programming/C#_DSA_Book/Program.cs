@@ -10,8 +10,13 @@ namespace CSharp_DSA_Book
     {
         static void Main(string[] args)
         {
-            PageOutput();
-
+            var linkedList = new LinkedList();
+            linkedList.Add(1);
+            linkedList.Add(2);
+            linkedList.Add(3);
+            linkedList.Add(4);
+            linkedList.Add(5);
+            linkedList.Print();
 
 
 

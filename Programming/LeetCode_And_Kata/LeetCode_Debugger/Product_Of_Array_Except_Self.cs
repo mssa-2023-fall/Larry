@@ -64,9 +64,9 @@ namespace LeetCode_Debugger
 
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("Current:\n");
-            foreach (var d in dict.Keys.ToArray()) { Console.Write($"{d} "); }
+            //foreach (var d in dict.Keys.ToArray()) { Console.Write($"{d} "); }
             Console.WriteLine("---------------------------------------------------");
-            foreach (var d in dict.Values.ToArray()) { Console.Write($"{d} "); }
+           // foreach (var d in dict.Values.ToArray()) { Console.Write($"{d} "); }
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("""
 

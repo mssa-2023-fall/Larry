@@ -8,7 +8,8 @@ namespace LeetCode_Debugger
     {
         static void Main(string[] args)
         {
-            Product_Of_Array_Except_Selfz.ProductExceptSelfOutput();
+           //Palindrome_Numberz.Palindrome_Numberz_Output1();
+           Palindrome_Numberz.Palindrome_Numberz_Output2();
 
         }
 
