@@ -1,14 +1,9 @@
-//using LeetCode_Debugger;
-/*
+//using LeetCode_Debugger
 namespace LeetCode_Debugger
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            GenerateSortedNumber(10);
-
-        }
+        
         public static int[] GenerateSortedNumber(int size)
         {
             var array = new int[size];
@@ -74,4 +69,5 @@ namespace LeetCode_Debugger
         
         }
     }
-}*/
+}
+

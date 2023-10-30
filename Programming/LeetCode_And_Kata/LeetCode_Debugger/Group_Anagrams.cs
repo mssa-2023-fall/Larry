@@ -28,7 +28,7 @@ Output: [["a"]]
 */
 namespace LeetCode_Debugger
 {
-    public class Group_Anagrams
+    public class Group_Anagram
     {
 
         #region The Actual Method
@@ -64,7 +64,7 @@ namespace LeetCode_Debugger
 
 
 
-public static class Group_Anagram
+public static class Group_Anagrams
 {
     public static void GroupAnagramOutput()
     {
@@ -86,7 +86,32 @@ public static class Group_Anagram
             dict[sortedStrings].Add(strs[i]);
         }
         Console.Write(dict.Values.ToList<IList<string>>());
+    }
 
 
+    public static void GroupAnagramOutputs()
+    {
+        string[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
+        var dict = new Dictionary<string, List<string>>();
+
+        for (int i = 0; i < strs.Length; i++)
+        {
+            var chars = strs[i].ToCharArray();
+            Array.Sort(chars);
+            var sortedStrings = new string(chars);
+            if(!dict.ContainsKey(sortedStrings))
+            {
+                dict.Add(sortedStrings, new List<string>{strs[i]});
+            }
+            else
+            {
+                dict[sortedStrings].Add(strs[i]);
+            }
+
+        }
+        foreach(var n in dict.Values.ToArray())
+        {
+            Console.WriteLine(n);
+        }
     }
 }

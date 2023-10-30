@@ -8,8 +8,7 @@ namespace LeetCode_Debugger
     {
         static void Main(string[] args)
         {
-           //Palindrome_Numberz.Palindrome_Numberz_Output1();
-           Palindrome_Numberz.Palindrome_Numberz_Output2();
+            Group_Anagrams.GroupAnagramOutputs();
 
         }
 
