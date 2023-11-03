@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
+namespace LeetCode_Debugger{
 public class RemoveElement
 {
     public int RemoveElements(int[] nums, int val)
@@ -72,6 +73,7 @@ public static class RemoveElementz
 
 
     }
+}
 }
 /*
  * Input: nums = [3, 2, 2, 3], val = 3
