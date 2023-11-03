@@ -8,8 +8,9 @@ namespace LeetCode_Debugger
     {
         static void Main(string[] args)
         {
-            Group_Anagrams.GroupAnagramOutputs();
-
+            //Group_Anagrams.GroupAnagramOutputs();
+            //Longest_Consecutive_Sequences.Longest_Consecutive_Sequences_Output();
+            RemoveElementz.RemoveElementzOutput2();
         }
 
     }
