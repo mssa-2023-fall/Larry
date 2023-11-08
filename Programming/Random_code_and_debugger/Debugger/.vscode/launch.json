@@ -12,8 +12,8 @@
             "program": "${workspaceFolder}/bin/Debug/net7.0/Debugger.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
-            "stopAtEntry": false
+            "console": "integratedTerminal",
+            "stopAtEntry": true
         },
         {
             "name": ".NET Core Attach",

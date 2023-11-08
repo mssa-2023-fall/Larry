@@ -9,9 +9,9 @@ namespace Debugger
     {
         static void Main(string[] args)
         {
+            int learningDebug = 1;
 
-
-           
+           Console.WriteLine("externalTerminal");
         }
     }
 }
