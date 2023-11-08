@@ -1,2 +1,2 @@
 # Larry
-Anotha One
+Repo with learning material.
