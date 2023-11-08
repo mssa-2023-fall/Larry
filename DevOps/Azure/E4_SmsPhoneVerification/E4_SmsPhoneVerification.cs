@@ -9,7 +9,10 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Threading;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
-using Microsoft.Azure.WebJobs.Extensions.Twilio;
+using Microsoft.Azure.WebJobs.Extensions;
+using Twilio.AspNet.Common;
+using Twilio.Rest.Api;
+using Twilio.Rest.Api.V2010.Account;
 
 namespace E4_SmsPhoneVerification
 {
@@ -68,6 +71,24 @@ namespace E4_SmsPhoneVerification
 
                 return authorized;
             }
+        }
+        [FunctionName("E4_SendSmsChallenge")]
+        public static int SendSmsChallenge(
+   [ActivityTrigger] string phoneNumber,
+   ILogger log,
+   [TwilioSms(AccountSidSetting = "TwilioAccountSid", AuthTokenSetting = "TwilioAuthToken", From = "%TwilioPhoneNumber%")]
+        out CreateMessageOptions message)
+        {
+            // Get a random number generator with a random seed (not time-based)
+            var rand = new Random(Guid.NewGuid().GetHashCode());
+            int challengeCode = rand.Next(10000);
+
+            log.LogInformation($"Sending verification code {challengeCode} to {phoneNumber}.");
+
+            message = new CreateMessageOptions(new Twilio.Types.PhoneNumber(phoneNumber));
+            message.Body = $"Your verification code is {challengeCode:1111}";
+
+            return challengeCode;
         }
     }
 }
