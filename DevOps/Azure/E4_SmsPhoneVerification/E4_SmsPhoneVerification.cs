@@ -1,17 +1,12 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System.Threading;
 using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 using Microsoft.Azure.WebJobs.Extensions;
-using Twilio.AspNet.Common;
-using Twilio.Rest.Api;
+
 using Twilio.Rest.Api.V2010.Account;
 
 namespace E4_SmsPhoneVerification
@@ -76,7 +71,7 @@ namespace E4_SmsPhoneVerification
         public static int SendSmsChallenge(
    [ActivityTrigger] string phoneNumber,
    ILogger log,
-   [TwilioSms(AccountSidSetting = "TwilioAccountSid", AuthTokenSetting = "TwilioAuthToken", From = "%TwilioPhoneNumber%")]
+   [TwilioSms(AccountSidSetting = "TwilioAccountSid", AuthTokenSetting = "TwilioAuthToken", From = "+18449892188")]
         out CreateMessageOptions message)
         {
             // Get a random number generator with a random seed (not time-based)

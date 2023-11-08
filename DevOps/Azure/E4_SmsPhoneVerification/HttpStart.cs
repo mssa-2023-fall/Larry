@@ -15,7 +15,7 @@ namespace E4_SmsPhoneVerification
         [FunctionName("HttpStart")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
-            [DurableClient] IDurableOrchestrationClient starter,
+            [DurableClient] IDurableClient starter,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
@@ -33,7 +33,7 @@ namespace E4_SmsPhoneVerification
             }
 
             // Start the orchestrator function
-            string instanceId = await starter.StartNewAsync("E4_SmsPhoneVerification", phoneNumber);
+            string instanceId = await starter.StartNewAsync<string>("E4_SmsPhoneVerification", phoneNumber);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
