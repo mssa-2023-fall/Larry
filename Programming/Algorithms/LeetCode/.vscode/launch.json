@@ -10,9 +10,9 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/Debug/net7.0/LeetCode_Debugger.dll",
             "args": [],
+            "preLaunchTask": "preLaunch",
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
-            "externalConsole": true,
             "console": "internalConsole"
             
         },

@@ -38,12 +38,12 @@ namespace LeetCode_Debugger
 
 
 
-public static class FirstUniqueChars
-{
-    public static void FirstUniqueCharsOutput()
-    {
-        string s = "loveleetcode";
+// public static class FirstUniqueChars
+// {
+//     public static void FirstUniqueCharsOutput()
+//     {
+//         string s = "loveleetcode";
        
-    }
-}
+//     }
+// }
 
